@@ -12,8 +12,8 @@
 
 ## 2. Proposed tech stack
 
-- Frontend: Next.js + TypeScript, App Router — рекомендовано для SEO та Vercel.
-- Styling: Tailwind CSS або локальна token-based CSS layer, відповідно до фактичної структури starter-а.
+- Frontend: Next.js 16 + TypeScript, App Router.
+- Styling: локальна token-based CSS layer у `src/styles/tokens.css`.
 - Content: typed TypeScript data або JSON; без непідтверджених значень.
 - Hosting: Vercel через GitHub.
 - Backend/database: відсутні у v1.
@@ -71,7 +71,7 @@
    - Choice: компоненти + структурований контент без backend.
    - Consequence: швидкий v1; CMS і форма залишаються майбутніми розширеннями.
 
-2. Decision: Next.js/TypeScript direction.
+2. Decision: Next.js/TypeScript implementation.
    - Context: потрібні SEO, Vercel і швидке завантаження.
-   - Choice: використовувати, якщо це сумісно зі starter-структурою.
-   - Consequence: остаточно підтвердити після перевірки package manifest у кодовій частині.
+   - Choice: використовується Next.js 16, TypeScript і App Router.
+   - Consequence: Vercel-сумісний статичний сайт із metadata, sitemap, robots і 404.
