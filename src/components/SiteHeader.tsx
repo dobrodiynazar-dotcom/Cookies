@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const telegramUrl = "https://t.me/asdpiop";
+const orderUrl = "https://www.instagram.com/milyami._?stkn=NXRobTN5NjFmejZt&utm_source=qr";
 
 const navigation = [
   { href: "#product", label: "Про горішки" },
@@ -52,7 +52,7 @@ export function SiteHeader() {
         ))}
       </nav>
 
-      <a className="header-order" href={telegramUrl} target="_blank" rel="noreferrer">
+      <a className="header-order" href={orderUrl} target="_blank" rel="noreferrer">
         Замовити
       </a>
     </header>

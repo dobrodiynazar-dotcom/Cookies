@@ -2,7 +2,7 @@ import Image from "next/image";
 import { PackagingCarousel } from "../components/PackagingCarousel";
 import { SiteHeader } from "../components/SiteHeader";
 
-const telegramUrl = "https://t.me/asdpiop";
+const orderUrl = "https://www.instagram.com/milyami._?stkn=NXRobTN5NjFmejZt&utm_source=qr";
 
 export default function Home() {
   return (
@@ -28,13 +28,13 @@ export default function Home() {
           <div className="hero-copy">
             <h1 id="hero-title">Горішки</h1>
             <p className="hero-subtitle">Домашня кондитерська</p>
-            <a className="button hero-cta" href={telegramUrl} target="_blank" rel="noreferrer">
+            <a className="button hero-cta" href={orderUrl} target="_blank" rel="noreferrer">
               Замовити
             </a>
           </div>
         </section>
 
-        <section className="product section-pad wave-section" id="product" aria-labelledby="product-title">
+        <section className="product section-pad" id="product" aria-labelledby="product-title">
           <div className="product-header">
             <span className="eyebrow">01 / Продукт</span>
             <h2 id="product-title">
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="packaging section-pad wave-section" id="packaging" aria-labelledby="packaging-title">
+        <section className="packaging section-pad" id="packaging" aria-labelledby="packaging-title">
           <div className="section-heading">
             <span className="eyebrow">02 / Формати</span>
             <h2 id="packaging-title">
@@ -66,7 +66,7 @@ export default function Home() {
           <PackagingCarousel />
         </section>
 
-        <section className="occasions section-pad wave-section" id="occasions" aria-labelledby="occasions-title">
+        <section className="occasions section-pad" id="occasions" aria-labelledby="occasions-title">
           <div className="occasions-title">
             <span className="eyebrow">03 / Приводи</span>
             <h2 id="occasions-title">
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="story section-pad wave-section" id="story" aria-labelledby="story-title">
+        <section className="story section-pad" id="story" aria-labelledby="story-title">
           <div className="story-art">
             <div className="story-photo">
               <Image src="/images/nuts-box.webp" alt="Горішки у відкритій коробці" fill sizes="(max-width: 780px) 90vw, 42vw" />
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="reviews section-pad wave-section" id="reviews" aria-labelledby="reviews-title">
+        <section className="reviews section-pad" id="reviews" aria-labelledby="reviews-title">
           <span className="eyebrow">05 / Відгуки</span>
           <h2 id="reviews-title">
             Слова тих,<br />
@@ -110,7 +110,7 @@ export default function Home() {
           <div className="review-pending"><span aria-hidden="true">“</span><p>Незабаром тут з’являться справжні відгуки про горішки.</p></div>
         </section>
 
-        <section className="order section-pad wave-section" id="order" aria-labelledby="order-title">
+        <section className="order section-pad" id="order" aria-labelledby="order-title">
           <span className="eyebrow">06 / На зв’язку</span>
           <h2 id="order-title">
             Поділимося<br />
@@ -121,7 +121,7 @@ export default function Home() {
             <div><h3>Для кав’ярень</h3><p>Хочете обговорити співпрацю? Зверніться до нас тим самим способом.</p></div>
           </div>
           <div className="social-status">
-            <a className="button contact-cta" href={telegramUrl} target="_blank" rel="noreferrer">Instagram / Telegram</a>
+            <a className="button contact-cta" href={orderUrl} target="_blank" rel="noreferrer">Instagram / Telegram</a>
             <span>Посилання незабаром</span>
           </div>
         </section>

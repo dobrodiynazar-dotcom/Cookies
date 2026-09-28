@@ -1,6 +1,5 @@
 :root {
   --burgundy: #3b0d12;
-  --burgundy-soft: #4a1719;
   --burgundy-deep: #2e090d;
   --butter: #f2e1bc;
   --butter-soft: #ddc5a3;
@@ -22,7 +21,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background: var(--burgundy);
+  background: var(--burgundy-deep);
   color: var(--cream);
   font-family: var(--font-body), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -92,31 +91,8 @@ h2 em {
 .section-pad {
   padding: 96px 20px 92px;
   scroll-margin-top: 86px;
-}
-
-.wave-section {
-  --section-bg: var(--burgundy);
-  position: relative;
-  isolation: isolate;
+  --section-bg: var(--burgundy-deep);
   background: var(--section-bg);
-}
-
-.wave-section::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: -34px;
-  left: 0;
-  width: 100%;
-  height: 58px;
-  background: var(--section-bg);
-  clip-path: ellipse(56% 100% at 50% 100%);
-  pointer-events: none;
-}
-
-.wave-section > * {
-  position: relative;
-  z-index: 1;
 }
 
 .site-header {
@@ -299,7 +275,7 @@ h2 em {
 }
 
 .product {
-  --section-bg: var(--burgundy);
+  --section-bg: var(--burgundy-deep);
   color: var(--cream);
 }
 
@@ -422,7 +398,7 @@ h2 em {
 }
 
 .occasions {
-  --section-bg: var(--burgundy-soft);
+  --section-bg: var(--burgundy-deep);
   color: var(--cream);
 }
 
@@ -537,7 +513,7 @@ h2 em {
 }
 
 .order {
-  --section-bg: var(--burgundy);
+  --section-bg: var(--burgundy-deep);
   color: var(--cream);
 }
 
@@ -591,7 +567,7 @@ h2 em {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  background: var(--burgundy);
+  background: var(--burgundy-deep);
   color: var(--muted-light);
   font-size: 0.73rem;
 }
@@ -634,11 +610,6 @@ h2 em {
 
   .section-pad {
     padding: 140px max(5vw, calc((100vw - 1240px) / 2)) 130px;
-  }
-
-  .wave-section::before {
-    top: -54px;
-    height: 92px;
   }
 
   .site-header {
@@ -796,7 +767,7 @@ h2 em {
   align-items: flex-start;
   justify-content: center;
   padding: 10vw;
-  background: var(--burgundy);
+  background: var(--burgundy-deep);
 }
 
 .not-found h1 {
