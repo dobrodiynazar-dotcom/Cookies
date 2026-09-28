@@ -12,11 +12,11 @@ export function PackagingCarousel() {
   const [current, setCurrent] = useState(0);
   const item = formats[current];
   return (
-    <div className="packaging-carousel" aria-roledescription="карусель" aria-label="Формати пакування">
+    <div className="packaging-carousel" role="region" aria-roledescription="карусель" aria-label="Формати пакування">
       <div className="package-photo">
         <Image key={item.image} src={item.image} alt={item.alt} fill sizes="(max-width: 780px) 92vw, 45vw" />
       </div>
-      <div className="package-details" aria-live="polite">
+      <div className="package-details" aria-live="polite" aria-atomic="true">
         <span className="eyebrow">0{current + 1} / 0{formats.length}</span>
         <h3>{item.title}</h3>
         <p>{item.detail}</p>
