@@ -27,7 +27,7 @@ export default function Home() {
 
           <div className="hero-copy">
             <h1 id="hero-title">Горішки</h1>
-            <p className="hero-subtitle">Домашня кондитерська</p>
+            <p className="label hero-subtitle">Домашня кондитерська</p>
             <a className="button hero-cta" href={orderUrl} target="_blank" rel="noreferrer">
               Замовити
             </a>
@@ -36,7 +36,7 @@ export default function Home() {
 
         <section className="product section-pad" id="product" aria-labelledby="product-title">
           <div className="product-header">
-            <span className="eyebrow">01 / Продукт</span>
+            <span className="label">01 / Продукт</span>
             <h2 id="product-title">
               Знайомі з дитинства.<br />
               <em>По-своєму особливі.</em>
@@ -57,7 +57,7 @@ export default function Home() {
 
         <section className="packaging section-pad" id="packaging" aria-labelledby="packaging-title">
           <div className="section-heading">
-            <span className="eyebrow">02 / Формати</span>
+            <span className="label">02 / Формати</span>
             <h2 id="packaging-title">
               Для себе.<br />
               <em>І для когось особливого.</em>
@@ -68,7 +68,7 @@ export default function Home() {
 
         <section className="occasions section-pad" id="occasions" aria-labelledby="occasions-title">
           <div className="occasions-title">
-            <span className="eyebrow">03 / Приводи</span>
+            <span className="label">03 / Приводи</span>
             <h2 id="occasions-title">
               Маленький жест.<br />
               <em>Тепла пам’ять.</em>
@@ -76,9 +76,9 @@ export default function Home() {
             <p>Горішки пасують і до тихої паузи, і до події, яку хочеться запам’ятати.</p>
           </div>
           <div className="occasion-grid">
-            <article><span>01</span><h3>До кави та розмови</h3><p>Для затишної зустрічі вдома або в гостях.</p></article>
-            <article><span>02</span><h3>Як знак уваги</h3><p>Три горішки в окремому подарунковому пакуванні.</p></article>
-            <article><span>03</span><h3>Для свята</h3><p>Для днів народження, весіль та інших особливих моментів.</p></article>
+            <article><span className="label occasion-number">01</span><h3>До кави та розмови</h3><p>Для затишної зустрічі вдома або в гостях.</p></article>
+            <article><span className="label occasion-number">02</span><h3>Як знак уваги</h3><p>Три горішки в окремому подарунковому пакуванні.</p></article>
+            <article><span className="label occasion-number">03</span><h3>Для свята</h3><p>Для днів народження, весіль та інших особливих моментів.</p></article>
           </div>
           <div className="occasion-photo">
             <Image src="/images/nuts-bowl.webp" alt="Миска з домашніми горішками" fill sizes="(max-width: 780px) 90vw, 42vw" />
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </div>
           <div className="story-copy">
-            <span className="eyebrow">04 / Майстриня та бренд</span>
+            <span className="label">04 / Майстриня та бренд</span>
             <h2 id="story-title">
               За кожним смаком<br />
               <em>є своя історія.</em>
@@ -102,7 +102,7 @@ export default function Home() {
         </section>
 
         <section className="reviews section-pad" id="reviews" aria-labelledby="reviews-title">
-          <span className="eyebrow">05 / Відгуки</span>
+          <span className="label">05 / Відгуки</span>
           <h2 id="reviews-title">
             Слова тих,<br />
             <em>хто вже скуштував.</em>
@@ -111,7 +111,7 @@ export default function Home() {
         </section>
 
         <section className="order section-pad" id="order" aria-labelledby="order-title">
-          <span className="eyebrow">06 / На зв’язку</span>
+          <span className="label">06 / На зв’язку</span>
           <h2 id="order-title">
             Поділимося<br />
             <em>чимось смачним?</em>

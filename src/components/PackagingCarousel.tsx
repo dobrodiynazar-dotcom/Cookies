@@ -17,7 +17,7 @@ export function PackagingCarousel() {
         <Image key={item.image} src={item.image} alt={item.alt} fill sizes="(max-width: 780px) 92vw, 45vw" />
       </div>
       <div className="package-details" aria-live="polite" aria-atomic="true">
-        <span className="eyebrow">0{current + 1} / 0{formats.length}</span>
+        <span className="label">0{current + 1} / 0{formats.length}</span>
         <h3>{item.title}</h3>
         <p>{item.detail}</p>
         <div className="carousel-controls">

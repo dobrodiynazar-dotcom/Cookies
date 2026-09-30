@@ -1,23 +1,13 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Great_Vibes, Manrope } from "next/font/google";
+import { Lora } from "next/font/google";
 import "./globals.css";
 
-const bodyFont = Manrope({
-  subsets: ["cyrillic", "latin"],
-  variable: "--font-body",
-});
-
-const displayFont = Cormorant_Garamond({
+const lora = Lora({
   subsets: ["cyrillic", "latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-display",
-});
-
-const scriptFont = Great_Vibes({
-  subsets: ["cyrillic", "latin"],
-  weight: "400",
-  variable: "--font-script",
+  display: "swap",
+  variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="uk" className={`${bodyFont.variable} ${displayFont.variable} ${scriptFont.variable}`}>
+    <html lang="uk" className={lora.variable}>
       <body>{children}</body>
     </html>
   );

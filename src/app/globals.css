@@ -7,6 +7,12 @@
   --ink: #351015;
   --muted-light: #dfcdae;
   --muted-dark: #79565a;
+  --type-h1: clamp(3rem, 10vw, 7rem);
+  --type-h2: clamp(2rem, 5vw, 3.5rem);
+  --type-h3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --type-body: clamp(1rem, 1.6vw, 1.125rem);
+  --type-label: 0.75rem;
+  --type-control: 0.875rem;
 }
 
 * {
@@ -23,7 +29,10 @@ body {
   overflow-x: hidden;
   background: var(--burgundy-deep);
   color: var(--cream);
-  font-family: var(--font-body), Arial, sans-serif;
+  font-family: var(--font-lora), Georgia, "Times New Roman", serif;
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,8 +47,11 @@ a {
   text-decoration: none;
 }
 
-button {
-  font: inherit;
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 a:focus-visible,
@@ -60,31 +72,52 @@ p {
   margin-top: 0;
 }
 
+p {
+  max-width: 60ch;
+}
+
 h1,
 h2,
 h3 {
-  font-family: var(--font-display), Georgia, serif;
+  margin-bottom: 0;
+  color: inherit;
+}
+
+h1 {
+  font-size: var(--type-h1);
   font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
 }
 
 h2 {
-  margin-bottom: 0;
-  font-size: clamp(2.85rem, 13vw, 4.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  margin-top: 0.35em;
+  margin-bottom: 0.25em;
+  font-size: var(--type-h2);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--type-h3);
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 h2 em {
   color: inherit;
+  font-style: italic;
   font-weight: 400;
 }
 
-.eyebrow {
+.label {
   display: inline-block;
   margin-bottom: 22px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-size: var(--type-label);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -135,7 +168,6 @@ h2 em {
 .wordmark {
   display: none;
   justify-self: center;
-  font-family: var(--font-script), cursive;
   font-size: 1.7rem;
 }
 
@@ -145,8 +177,9 @@ h2 em {
   color: var(--ink);
   background: var(--cream);
   border-radius: 9px;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(1.45rem, 7vw, 2rem);
+  font-size: var(--type-control);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1;
 }
 
@@ -175,8 +208,9 @@ h2 em {
 
 .site-menu a {
   padding: 13px 2px;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.55rem;
+  font-size: var(--type-control);
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .hero {
@@ -221,21 +255,11 @@ h2 em {
 
 .hero h1 {
   margin: 0;
-  font-family: var(--font-script), cursive;
-  font-size: clamp(4.9rem, 23vw, 7.25rem);
-  font-weight: 400;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
   text-shadow: 0 2px 12px rgb(40 22 10 / 0.35);
 }
 
 .hero-subtitle {
   margin: 8px 0 0;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(1.6rem, 7.2vw, 2.15rem);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: 0.08em;
   text-shadow: 0 2px 12px rgb(40 22 10 / 0.35);
 }
 
@@ -249,8 +273,9 @@ h2 em {
   border-radius: 9px;
   background: var(--burgundy);
   color: var(--cream);
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.45rem;
+  font-size: var(--type-control);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1;
   cursor: pointer;
 }
@@ -264,7 +289,6 @@ h2 em {
   border-radius: 999px;
   background: var(--cream);
   color: var(--ink);
-  font-size: 2.3rem;
   transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
 }
 
@@ -287,7 +311,7 @@ h2 em {
 
 .product-header h2,
 .section-heading h2 {
-  margin: 0;
+  margin: 0.35em 0 0.25em;
 }
 
 .product-body {
@@ -329,20 +353,18 @@ h2 em {
 
 .product-description .lead {
   margin-bottom: 20px;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2rem, 9vw, 2.8rem);
-  line-height: 1.05;
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .product-description p:not(.lead) {
   margin-bottom: 0;
-  font-size: 0.98rem;
-  line-height: 1.7;
 }
 
 .product-description .small-note {
   color: var(--muted-light);
-  font-size: 0.84rem !important;
+  font-size: var(--type-body);
 }
 
 .packaging {
@@ -364,15 +386,11 @@ h2 em {
 }
 
 .package-details h3 {
-  margin: 4px 0 16px;
-  font-size: clamp(2.45rem, 11vw, 3.4rem);
-  line-height: 1;
+  margin: 0.75em 0 0.5em;
 }
 
 .package-details p {
   margin-bottom: 0;
-  font-size: 0.98rem;
-  line-height: 1.7;
 }
 
 .carousel-controls {
@@ -388,7 +406,9 @@ h2 em {
   border-radius: 8px;
   background: transparent;
   color: var(--ink);
-  font-size: 1.45rem;
+  font-size: var(--type-control);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   cursor: pointer;
 }
 
@@ -410,14 +430,12 @@ h2 em {
 .story-copy h2,
 .reviews h2,
 .order h2 {
-  margin: 0 0 26px;
+  margin: 0.35em 0 0.25em;
 }
 
 .occasions-title > p,
 .story-copy > p {
   margin-bottom: 0;
-  font-size: 0.98rem;
-  line-height: 1.7;
 }
 
 .occasion-grid {
@@ -430,22 +448,22 @@ h2 em {
 }
 
 .occasion-grid article > span {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.occasion-grid article > .label {
+  margin-bottom: 0;
 }
 
 .occasion-grid h3 {
   margin: 10px 0 8px;
-  font-size: 2rem;
-  line-height: 1;
 }
 
 .occasion-grid p {
   margin-bottom: 0;
   color: var(--muted-light);
-  font-size: 0.93rem;
-  line-height: 1.6;
 }
 
 .occasion-photo {
@@ -501,7 +519,6 @@ h2 em {
   display: block;
   height: 62px;
   color: var(--burgundy);
-  font-family: var(--font-display), Georgia, serif;
   font-size: 6rem;
   line-height: 1;
 }
@@ -524,16 +541,12 @@ h2 em {
 }
 
 .order-grid h3 {
-  margin-bottom: 12px;
-  font-size: 2.2rem;
-  line-height: 1;
+  margin: 12px 0 8px;
 }
 
 .order-grid p {
   margin-bottom: 0;
   color: var(--muted-light);
-  font-size: 0.94rem;
-  line-height: 1.7;
 }
 
 .social-status {
@@ -547,17 +560,13 @@ h2 em {
 .contact-cta {
   background: var(--butter);
   color: var(--ink);
-  font-family: var(--font-body), Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .social-status span {
   color: var(--muted-light);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: var(--type-label);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -569,7 +578,7 @@ h2 em {
   gap: 18px;
   background: var(--burgundy-deep);
   color: var(--muted-light);
-  font-size: 0.73rem;
+  font-size: var(--type-label);
 }
 
 .site-footer a {
@@ -586,20 +595,10 @@ h2 em {
     top: 53%;
   }
 
-  .hero h1 {
-    font-size: clamp(4.15rem, 20vw, 5.3rem);
-  }
-
-  .hero-subtitle {
-    margin-top: 4px;
-    font-size: 1.48rem;
-  }
-
   .hero-cta {
     min-height: 56px;
     margin-top: 14px;
     padding-block: 11px;
-    font-size: 2.05rem;
   }
 }
 
@@ -645,12 +644,6 @@ h2 em {
   .site-menu a {
     padding: 8px 0;
     border: 0;
-    font-family: var(--font-body), Arial, sans-serif;
-    font-size: 0.78rem;
-  }
-
-  .header-order {
-    font-size: 1.55rem;
   }
 
   .hero-copy {
@@ -659,18 +652,6 @@ h2 em {
     right: auto;
     width: min(620px, 70vw);
     transform: translate(-50%, -50%);
-  }
-
-  .hero h1 {
-    font-size: clamp(7rem, 12vw, 10.5rem);
-  }
-
-  .hero-subtitle {
-    font-size: 2.15rem;
-  }
-
-  h2 {
-    font-size: clamp(4.2rem, 7vw, 6.6rem);
   }
 
   .product-header,
@@ -771,11 +752,10 @@ h2 em {
 }
 
 .not-found h1 {
-  margin: 20px 0;
-  font-size: clamp(3rem, 8vw, 7rem);
+  margin: 20px 0 12px;
 }
 
-.not-found p:not(.eyebrow) {
+.not-found p:not(.label) {
   margin-bottom: 32px;
   color: var(--muted-light);
   font-size: 1.1rem;
