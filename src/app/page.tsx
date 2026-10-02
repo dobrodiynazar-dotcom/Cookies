@@ -36,7 +36,6 @@ export default function Home() {
 
         <section className="product section-pad" id="product" aria-labelledby="product-title">
           <div className="product-header">
-            <span className="label">01 / Продукт</span>
             <h2 id="product-title">
               Знайомі з дитинства.<br />
               <em>По-своєму особливі.</em>
@@ -57,7 +56,6 @@ export default function Home() {
 
         <section className="packaging section-pad" id="packaging" aria-labelledby="packaging-title">
           <div className="section-heading">
-            <span className="label">02 / Формати</span>
             <h2 id="packaging-title">
               Для себе.<br />
               <em>І для когось особливого.</em>
@@ -68,7 +66,6 @@ export default function Home() {
 
         <section className="occasions section-pad" id="occasions" aria-labelledby="occasions-title">
           <div className="occasions-title">
-            <span className="label">03 / Приводи</span>
             <h2 id="occasions-title">
               Маленький жест.<br />
               <em>Тепла пам’ять.</em>
@@ -92,7 +89,6 @@ export default function Home() {
             </div>
           </div>
           <div className="story-copy">
-            <span className="label">04 / Майстриня та бренд</span>
             <h2 id="story-title">
               За кожним смаком<br />
               <em>є своя історія.</em>
@@ -102,7 +98,6 @@ export default function Home() {
         </section>
 
         <section className="reviews section-pad" id="reviews" aria-labelledby="reviews-title">
-          <span className="label">05 / Відгуки</span>
           <h2 id="reviews-title">
             Слова тих,<br />
             <em>хто вже скуштував.</em>
@@ -111,7 +106,6 @@ export default function Home() {
         </section>
 
         <section className="order section-pad" id="order" aria-labelledby="order-title">
-          <span className="label">06 / На зв’язку</span>
           <h2 id="order-title">
             Поділимося<br />
             <em>чимось смачним?</em>
