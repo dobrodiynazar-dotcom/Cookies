@@ -40,10 +40,6 @@ export function SiteHeader() {
         <span />
       </button>
 
-      <a className="wordmark" href="#top" aria-label="Горішки — на початок">
-        Горішки
-      </a>
-
       <nav id="site-menu" className={isOpen ? "site-menu is-open" : "site-menu"} aria-label="Основна навігація">
         {navigation.map((item) => (
           <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>

@@ -3,12 +3,13 @@
   --burgundy-deep: #2e090d;
   --butter: #f2e1bc;
   --butter-soft: #ddc5a3;
+  --caramel: #d2a15d;
   --cream: #fff0cf;
   --ink: #351015;
   --muted-light: #dfcdae;
   --muted-dark: #79565a;
-  --type-h1: clamp(3rem, 10vw, 7rem);
-  --type-h2: clamp(2rem, 5vw, 3.5rem);
+  --type-h1: clamp(2.5rem, 6vw, 4rem);
+  --type-h2: clamp(1.85rem, 4.5vw, 3.25rem);
   --type-h3: clamp(1.25rem, 2.5vw, 1.75rem);
   --type-body: clamp(1rem, 1.6vw, 1.125rem);
   --type-label: 0.75rem;
@@ -29,10 +30,11 @@ body {
   overflow-x: hidden;
   background: var(--burgundy-deep);
   color: var(--cream);
-  font-family: var(--font-lora), Georgia, "Times New Roman", serif;
+  font-family: var(--font-lora);
   font-size: var(--type-body);
   font-weight: 400;
   line-height: 1.65;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -107,7 +109,7 @@ h3 {
 
 h2 em {
   color: inherit;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
 }
 
@@ -134,12 +136,13 @@ h2 em {
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns: 48px max-content;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   min-height: calc(76px + env(safe-area-inset-top));
   padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
-  color: var(--cream);
+  color: var(--caramel);
   background: var(--burgundy-deep);
 }
 
@@ -153,33 +156,33 @@ h2 em {
   justify-content: space-between;
   border: 0;
   background: transparent;
-  color: var(--cream);
+  color: var(--caramel);
   cursor: pointer;
 }
 
 .menu-toggle span {
   display: block;
   width: 34px;
-  height: 4px;
+  height: 2px;
   background: currentColor;
-  border-radius: 3px;
-}
-
-.wordmark {
-  display: none;
-  justify-self: center;
-  font-size: 1.7rem;
+  border-radius: 1px;
 }
 
 .header-order {
-  justify-self: end;
-  padding: 10px 19px 9px;
-  color: var(--ink);
-  background: var(--cream);
-  border-radius: 9px;
-  font-size: var(--type-control);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  min-height: 44px;
+  padding: 10px 0 10px 8px;
+  color: var(--caramel);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0;
   line-height: 1;
 }
 
@@ -192,7 +195,7 @@ h2 em {
   width: 100%;
   padding: 30px 24px 22px;
   gap: 0;
-  color: var(--cream);
+  color: var(--caramel);
   background: var(--burgundy-deep);
   opacity: 0;
   visibility: hidden;
@@ -242,24 +245,36 @@ h2 em {
 .hero-copy {
   position: absolute;
   z-index: 2;
-  top: 51%;
-  left: 20px;
-  right: 20px;
+  top: 63%;
+  left: 5%;
+  right: 5%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   color: var(--cream);
-  text-align: center;
+  text-align: left;
   transform: translateY(-50%);
 }
 
 .hero h1 {
   margin: 0;
+  font-size: clamp(3.4rem, 15vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
   text-shadow: 0 2px 12px rgb(40 22 10 / 0.35);
 }
 
 .hero-subtitle {
+  display: block;
+  max-width: none;
   margin: 8px 0 0;
+  font-size: clamp(1.05rem, 5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
   text-shadow: 0 2px 12px rgb(40 22 10 / 0.35);
 }
 
@@ -281,20 +296,51 @@ h2 em {
 }
 
 .hero-cta {
-  width: min(270px, 82vw);
-  min-height: 62px;
-  margin-top: 22px;
-  padding: 14px 36px;
+  position: relative;
+  align-self: flex-start;
+  width: min(252px, 60vw);
+  min-height: 66px;
+  margin-top: 16px;
+  padding: 10px 18px;
   border: 0;
-  border-radius: 999px;
-  background: var(--cream);
-  color: var(--ink);
-  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  border-radius: 0;
+  background: transparent;
+  color: var(--cream);
+  font-size: clamp(1.8rem, 8vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  transition: transform 180ms ease;
+}
+
+.hero-cta::before,
+.hero-cta::after {
+  position: absolute;
+  border: 0 solid var(--caramel);
+  content: "";
+  pointer-events: none;
+}
+
+.hero-cta::before {
+  top: 0;
+  right: 0;
+  bottom: 14px;
+  left: 14px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-top-right-radius: 12px;
+}
+
+.hero-cta::after {
+  top: 14px;
+  right: 14px;
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-bottom-left-radius: 12px;
 }
 
 .hero-cta:hover {
-  background: var(--butter-soft);
-  color: var(--burgundy-deep);
   transform: translateY(-2px);
 }
 
@@ -517,9 +563,9 @@ h2 em {
 
 .review-pending span {
   display: block;
-  height: 62px;
+  height: 42px;
   color: var(--burgundy);
-  font-size: 6rem;
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -592,13 +638,13 @@ h2 em {
   }
 
   .hero-copy {
-    top: 53%;
+    top: 60%;
   }
 
   .hero-cta {
-    min-height: 56px;
+    min-height: 62px;
     margin-top: 14px;
-    padding-block: 11px;
+    padding-block: 9px;
   }
 }
 
@@ -612,18 +658,20 @@ h2 em {
   }
 
   .site-header {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     min-height: 84px;
     padding: 12px 4vw;
   }
 
-  .menu-toggle {
-    display: none;
+  .header-order {
+    position: static;
+    grid-column: 2;
+    justify-self: end;
+    transform: none;
   }
 
-  .wordmark {
-    display: inline-block;
-    justify-self: start;
+  .menu-toggle {
+    display: none;
   }
 
   .site-menu {
@@ -632,7 +680,8 @@ h2 em {
     display: flex;
     width: auto;
     padding: 0;
-    justify-self: center;
+    justify-self: start;
+    grid-column: 1;
     gap: clamp(18px, 2.4vw, 40px);
     background: transparent;
     border-radius: 0;
@@ -651,7 +700,25 @@ h2 em {
     left: 50%;
     right: auto;
     width: min(620px, 70vw);
+    align-items: center;
+    text-align: center;
     transform: translate(-50%, -50%);
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 7vw, 6rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero-cta {
+    align-self: center;
+    width: 260px;
+    min-height: 66px;
+    margin-top: 18px;
+    font-size: 2.1rem;
   }
 
   .product-header,

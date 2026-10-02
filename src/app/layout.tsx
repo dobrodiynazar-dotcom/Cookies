@@ -5,7 +5,7 @@ import "./globals.css";
 const lora = Lora({
   subsets: ["cyrillic", "latin"],
   weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  style: "normal",
   display: "swap",
   variable: "--font-lora",
 });

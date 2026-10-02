@@ -27,7 +27,7 @@ export default function Home() {
 
           <div className="hero-copy">
             <h1 id="hero-title">Горішки</h1>
-            <p className="label hero-subtitle">Домашня кондитерська</p>
+            <p className="hero-subtitle">Домашня кондитерська</p>
             <a className="button hero-cta" href={orderUrl} target="_blank" rel="noreferrer">
               Замовити
             </a>
